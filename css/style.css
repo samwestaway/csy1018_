@@ -1,0 +1,393 @@
+/* GLOBAL STYLES */
+body {
+  background: #191616;
+  width:99%;
+  height: 100%;
+  padding-top: 20em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+ display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+  flex-direction: column;
+}
+h1
+{
+  color:white;
+  font-size:30px;
+}
+h2
+{
+  color:white;
+  font-size:10px; 
+}
+i
+{
+  color:white;
+}
+ul {
+    list-style: none;
+}
+img{
+    width:75%;
+    height:auto;
+}
+table
+{
+  background: #191616;
+}
+th, td {
+  border: 3px solid #191616;
+  background: #e55035;
+}
+.textcontainer1 /* The large container for all text. */
+{
+  background: #d55d03;
+  align-content: center;
+  margin-top: 10px;
+  margin-left: 1%;
+  width: 99%;
+}
+
+.textbox1{ /* The very first textbox. */
+    position: relative;
+    color: black;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    text-align: center;
+    align-self: center;
+}
+.textcontainer2 /* The large container for all text. */
+{
+  background: #d55d03;
+  align-content: center;
+  margin-top: 10px;
+  margin-left: 1%;
+  width: 99%;
+  overflow-y: hidden;
+  height:100%;
+}
+
+.TEXTBOX2{ /* The second textbox. */
+  position: relative;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-align: left;
+  align-self: center;
+  overflow-y: hidden;
+}
+
+.title{ /* The Header bar for the title. */
+  width: 100%;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 75%;
+  position: relative;
+  opacity: 0.85;
+}
+
+a
+{
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+a:hover
+{
+  color: #6f615f;
+}
+/* The original source where I learnt how to make the hamburger is from https://codepen.io/erikterwan/pen/EVzeRP */
+#menuToggle /* Code to toggle the menus state. */
+{
+  display: block;
+  position: relative;
+  margin-top: 20px;
+  margin-left: 15px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 35px;
+  height: 30px;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  cursor: pointer;
+
+  opacity: 0; /* Hiding it makes the cursor input button hidden, but usable. */
+  z-index: 2; /* This is the cursor input button. */
+
+  -webkit-touch-callout: none;
+}
+
+/*This is the starting code for the hamburger itself.*/
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #d55d03;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    background 1.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    opacity 0.55s ease; /* This makes the hamburger icon to morph into the X */
+}
+/* These toggles create the animation for the hamburger menu, both the slide and the button animation. */
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #ffffff;
+}
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+#menu
+/* Having the position as absolute ensures it can be used ontop of the actual website.
+
+This is mostly the creation of the icon for the hamburger, along with it transitioning from three lines into an X.*/
+{
+  position: absolute;
+  width: 80px;
+  height:auto;
+  margin: -50px 0 0 -20px;
+  padding-right: 90px;
+  padding-left: 20px;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  background: #e55035;
+  list-style-type: none;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  border-style: solid;
+  border-color: #1a1716;
+  border-width: 4px;
+  color: #e3d7d7;
+}
+
+#menu li /* This makes the menu list based. */
+{
+  padding: 10px 0px;
+  font-size: 20px;
+  color: #ffffff;
+  
+}
+/* Forces it to slide to the left */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+  font-family: inherit;
+}
+.video-container /* This is for the video embedded size for mobile. */
+{
+  position: relative;
+  padding-bottom: 100%;
+  margin-left: 0%;
+  overflow: hidden;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  width: 100%;
+  height: 75%;
+}
+.flexcontainer3 /* This is the mobile version of the flexcontainer3 */
+{
+  width:99%;
+  margin-top: 10px;
+  background:#e55035;
+  height:75%;
+  margin-left: -20px;
+  text-align: center;
+  text-overflow: ellipsis;
+  border-style:solid;
+  border-color:#191616;
+  border-width:3px;
+  border-radius:10px;
+}
+.flexcontainer4 /* This is the mobile version of the flexcontainer4 */
+{
+  width:99%;
+  margin-top: 10px;
+  background:#e55035;
+  height:75%;
+  margin-left: -22px;
+  text-align: center;
+  text-overflow: ellipsis;
+  border-style:solid;
+  border-color:#191616;
+  border-radius:10px;
+  border-width:5px;
+}
+.footer form { /* Everything below this until the next .footer #form is the code for my form. */
+  padding:1px;
+  width: 40%;
+  font: 14px;
+  background-color: #d55d03;
+  min-width:250px;
+}
+
+form div + div { 
+  margin-top: 0.5em;
+}
+
+input, textarea {
+  font: 16px; 
+  width: 200px;
+  box-sizing:border-box;
+  border: 1px solid #000;
+}
+
+label {
+  display:inline-block;
+  text-align:center;
+  border-style:solid;
+  border-color: #191616;
+  background-color: #d55d03;
+}
+
+input:focus, textarea:focus {
+  border-color:#000;
+}
+
+textarea {
+  vertical-align: top;
+  height: 50px;
+  width:200px;
+}
+button{
+  background:white;
+  border-style:solid;
+  border-color:black;
+  border-radius:20px;
+}
+
+.footer #form {
+  width:99%;
+  margin-left:1%;
+  position:relative;
+  background: #d55d03;
+  z-index: 999;
+  
+}
+
+@media (min-width:800px) /* Media query for mobile to tablet accessibility. */
+{  
+  body{
+ width: 99%;
+  }
+  .flexcontainer3 { /* Column boxes for the website */
+    width: 97%;
+    margin-left: -1%;
+    border-style:solid;
+    border-color:#191616;
+    border-width:3px;
+    border-radius: 10px;
+    border-radius: 10px;
+  }
+  .flexcontainer4 { /* Column boxes for the website */
+    width: 97%;
+    margin-left: -1%;
+    border-style:solid;
+    border-color:#191616;
+    border-radius: 10px;
+  }
+  
+  .video-container /* Everything with .video-container below this is for the video embedded size for desktop. */
+  {
+    position: relative;
+    margin-left: 25%;
+    margin-right:25%;
+    padding-top: 0px;
+  }
+  .video-container iframe,
+  .video-container object,
+  .video-container embed {
+    position: absolute;
+    height: 25%;
+    width: 100%;
+  }  
+  h1 /* Header 1 styling for tablet. */
+  {
+    color:white;
+    font-size:50px;
+  }
+  h2 /* Header 2 styling for tablet. */
+  {
+    color:white;
+    font-size:15px;
+  }
+  input, textarea {
+    width:80%;
+  }
+  
+  label {
+    width:100px;
+  }
+  .footer form { /*This is for the footer form */
+    width:99%;
+    margin-left:0.25%;
+    margin-top:10px;
+    background: #d55d03;
+  }
+}
+  @media (min-width:1200px) /* Media query for mobile to computer accessibility. */
+  {
+    .flexcontainer3 { /* Column boxes for the website */
+      width: 30%;
+      float: left;
+      margin-left: 0px;
+      margin-right: 10px;
+      border-style:solid;
+      border-color:#191616;
+      border-width:3px;
+      border-radius: 10px;
+    }
+    .flexcontainer4 { /* Column boxes for the website */
+      overflow:hidden;
+      width: 99%;
+      margin-left: -1%;
+      border-style:solid;
+      border-color:#191616;
+      border-width:5px;
+      border-radius: 10px;
+
+    }
+    
+    input, textarea {
+      width:95%;
+
+    }
+  }
